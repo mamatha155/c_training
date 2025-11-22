@@ -1,9 +1,19 @@
 #include <stdio.h>
+struct score
+{
+    float marks;
+    int rank;
+};
+void edit(struct score *s1)
+{
+    printf("before change in fn:%f\n",s1->marks);
+    s1-> marks = 66.9;
+    printf("after change in fn :%f\n",s1->marks);
+
+}
 void main()
 {
-    int a = 56;
-    int*p = &a;
-    printf("a value is %d\n",a);
-    printf("a address is %p\n",p);
-    printf("p points to %d",*p);
+    struct score s1 ={12,23,45};
+    edit(&s1);
+    printf("after change in main %f\n",s1.marks);
 }
